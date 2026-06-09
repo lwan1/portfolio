@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>NLG &amp; Knowledge Distillation — Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/projects-detail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="Lfa-page-loading" class="pozo-pageloading">
+        <div class="pozo-pageloading-inner"> <img src="images/logo.png" class="logo" alt=""> </div>
+    </div>
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <div id="pozo-page-wrapper">
+        <div class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a class="logo" href="index-light.html"> <img src="images/logo-light.png" class="logo-img" alt=""> </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span> </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Services</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Gallery <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="404.html" class="dropdown-item"><span>Image Gallery</span></a></li>
+                                <li><a href="404.html" class="dropdown-item"><span>Video Gallery</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="project-page-header text-center">
+            <div class="container">
+                <div class="animate-box" data-animate-effect="fadeInUp">
+                    <p class="project-breadcrumb"><a href="project.html">Projects</a> / Natural Language Processing</p>
+                    <h1>NLG &amp; Knowledge Distillation</h1>
+                    <p class="subtitle">Implemented five decoding algorithms from scratch on GPT-2, then distilled summarization ability from Qwen2.5-1.5B-Instruct into a 124M-parameter student model on CNN/Daily Mail.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="value">+19%</span>
+                                <span class="label">ROUGE-1 Improvement</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">1K</span>
+                                <span class="label">Teacher Summaries</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">5</span>
+                                <span class="label">Decoding Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Overview</h5>
+                            <p>This assignment spans two core NLP topics: <strong>decoding strategies</strong> for text generation and <strong>knowledge distillation</strong> for task-specific fine-tuning. In Part 1, five token-selection algorithms — greedy, vanilla sampling, temperature, top-k, and top-p — were implemented inside a custom <code>decode()</code> wrapper and evaluated on ROCStories story continuation with GPT-2.</p>
+                            <p>In Part 2, <strong>Qwen2.5-1.5B-Instruct</strong> served as a teacher to generate 1,000 pseudo-labeled summaries on CNN/Daily Mail articles. A <strong>GPT-2</strong> student was fine-tuned on teacher outputs (with prompt tokens masked via <code>-100</code>) and evaluated against human gold summaries using ROUGE.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>Implement greedy, vanilla, temperature, top-k, and top-p decoding from logits to tokens.</li>
+                                <li>Quantify the fluency–diversity tradeoff using perplexity, CoLA fluency, and n-gram diversity.</li>
+                                <li>Build a teacher–student summarization pipeline with instruction-tuned and completion-style LMs.</li>
+                                <li>Fine-tune GPT-2 on teacher-generated pseudo-labels with masked language modeling.</li>
+                                <li>Measure summarization quality via ROUGE-1/2/L on 1,000 validation articles.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Results</h5>
+                            <ul>
+                                <li>Top-p decoding achieved the best balance: perplexity 11.66, fluency 0.75, trigram diversity 0.94.</li>
+                                <li>Greedy decoding maximized fluency (0.79) but near-zero diversity (0.02) — outputs were nearly identical.</li>
+                                <li>ROUGE-1 improved from 0.193 (baseline) to 0.230 (distilled) — a +19% relative gain.</li>
+                                <li>ROUGE-2 improved from 0.033 to 0.057 (+73%) — the largest relative metric gain.</li>
+                                <li>Training converged in 3 epochs (~10 min on T4): final train loss 2.48, val loss 3.01.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Key <span>Learnings</span></h5>
+                            <ul>
+                                <li>Decoding strategy matters as much as model weights — same GPT-2 produces radically different text.</li>
+                                <li>Vanilla sampling maximizes diversity but yields incoherent output (perplexity 73.95, fluency 0.34).</li>
+                                <li>Zero-shot GPT-2 with a TL;DR prompt alone cannot summarize news articles meaningfully.</li>
+                                <li>1,000 teacher pseudo-labels materially improve a 124M model without soft-logit distillation.</li>
+                                <li>ROUGE measures lexical overlap, not faithfulness — distilled summaries still hallucinate facts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pipeline -->
+        <section class="project-section">
+            <div class="container">
+                <div class="col-lg-10 offset-lg-1 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-head text-center">
+                        <h4>Distillation <span>Pipeline</span></h4>
+                    </div>
+                    <div class="nlg-pipeline">
+                        <div class="nlg-pipeline-step">CNN/Daily Mail<br><small>10K articles</small></div>
+                        <span class="nlg-pipeline-arrow">→</span>
+                        <div class="nlg-pipeline-step">Qwen2.5-1.5B<br><small>Teacher summaries</small></div>
+                        <span class="nlg-pipeline-arrow">→</span>
+                        <div class="nlg-pipeline-step">KD Dataset<br><small>1,000 pairs</small></div>
+                        <span class="nlg-pipeline-arrow">→</span>
+                        <div class="nlg-pipeline-step">GPT-2 Fine-Tune<br><small>3 epochs, mask prompts</small></div>
+                        <span class="nlg-pipeline-arrow">→</span>
+                        <div class="nlg-pipeline-step">ROUGE Eval<br><small>1,000 val articles</small></div>
+                    </div>
+                    <div class="project-two-col" style="margin-top:20px;">
+                        <div class="project-content-block">
+                            <h5>Part 1 — Decoding</h5>
+                            <p>Custom <code>decode()</code> with KV-cache handles batched generation. Each strategy selects the next token differently: <strong>greedy</strong> takes argmax; <strong>sampling</strong> draws from the full softmax; <strong>temperature</strong> scales logits before softmax; <strong>top-k</strong> masks non-top-k logits; <strong>top-p</strong> truncates by cumulative probability mass.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Part 2 — Distillation</h5>
+                            <p>Teacher uses chat templating with a system prompt; student uses completion-style <code>article\nTL;DR:</code> formatting. Only summary tokens contribute to the loss — article prompt tokens are masked with <code>label=-100</code>. Generation uses top-p=0.9, temperature=1.0, max 100 new tokens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Charts -->
+        <section class="project-section">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Results &amp; <span>Metrics</span></h4>
+                </div>
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="results-charts">
+                        <div class="chart-card">
+                            <div class="chart-container">
+                                <canvas id="nlg-chart-decoding"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-container">
+                                <canvas id="nlg-chart-rouge"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-card" style="margin-top:25px;">
+                        <div class="chart-container">
+                            <canvas id="nlg-chart-loss"></canvas>
+                        </div>
+                    </div>
+                    <table class="nlg-metric-table">
+                        <thead>
+                            <tr>
+                                <th>Decoding Method</th>
+                                <th>Perplexity</th>
+                                <th>Fluency</th>
+                                <th>Diversity (tri)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Greedy</td><td class="highlight">1.98</td><td class="highlight">0.79</td><td>0.02</td></tr>
+                            <tr><td>Vanilla Sample</td><td>73.95</td><td>0.34</td><td class="highlight">0.99</td></tr>
+                            <tr><td>Temperature</td><td>15.33</td><td>0.63</td><td>0.94</td></tr>
+                            <tr><td>Top-k (k=20)</td><td>12.39</td><td>0.70</td><td>0.95</td></tr>
+                            <tr><td>Top-p (p=0.7)</td><td>11.66</td><td>0.75</td><td>0.94</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="project-section" id="nlg-demo">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Interactive <span>Demo</span></h4>
+                </div>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:640px; margin:0 auto 30px;">Explore how decoding hyperparameters reshape token probabilities, and compare baseline, teacher, distilled, and gold summaries from the notebook's CNN/Daily Mail evaluation.</p>
+
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="ql-demo-grid-layout">
+                        <div class="ql-controls">
+                            <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">Decoding Playground</h6>
+                            <div class="ql-control-group">
+                                <label>Strategy</label>
+                                <select id="nlg-decode-method" class="form-select" style="background:#1a1a1a; border-color:#333; color:#ccc; font-size:13px;">
+                                    <option value="greedy">Greedy (argmax)</option>
+                                    <option value="vanilla">Vanilla Sampling</option>
+                                    <option value="temperature">Temperature Sampling</option>
+                                    <option value="topk">Top-k Sampling</option>
+                                    <option value="topp">Top-p (Nucleus)</option>
+                                </select>
+                            </div>
+                            <div class="ql-control-group nlg-param-group" id="nlg-param-temperature" hidden>
+                                <label>Temperature <span id="nlg-temperature-val">0.8</span></label>
+                                <input type="range" id="nlg-temperature" min="0.1" max="2" step="0.1" value="0.8">
+                            </div>
+                            <div class="ql-control-group nlg-param-group" id="nlg-param-topk" hidden>
+                                <label>Top-k <span id="nlg-topk-val">3</span></label>
+                                <input type="range" id="nlg-topk" min="1" max="8" step="1" value="3">
+                            </div>
+                            <div class="ql-control-group nlg-param-group" id="nlg-param-topp" hidden>
+                                <label>Top-p <span id="nlg-topp-val">0.70</span></label>
+                                <input type="range" id="nlg-topp" min="0.1" max="1" step="0.05" value="0.7">
+                            </div>
+                            <p class="nlg-param-hint" id="nlg-param-hint">Greedy decoding always picks the highest-logit token — no hyperparameters needed.</p>
+                            <div class="nlg-decode-outcome" id="nlg-decode-outcome"></div>
+                        </div>
+                        <div class="ql-visual-panel">
+                            <h6>Token Probability Distribution</h6>
+                            <p style="font-size:12px; color:#666; margin-bottom:15px;">Toy logits from vocabulary ["the", "cat", "sat", "on", "a", "mat", "dog", "ran"]</p>
+                            <div id="nlg-token-bars"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:35px; padding-top:35px; border-top:1px solid #222;">
+                        <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">Summary Comparison — Same Article</h6>
+                        <div class="nlg-article-box" id="nlg-article-text"></div>
+                        <div class="nlg-summary-tabs">
+                            <button class="nlg-summary-tab active" data-view="baseline">GPT-2 Baseline</button>
+                            <button class="nlg-summary-tab" data-view="distilled">GPT-2 Distilled</button>
+                            <button class="nlg-summary-tab" data-view="teacher">Qwen Teacher</button>
+                            <button class="nlg-summary-tab" data-view="gold">Gold Summary</button>
+                        </div>
+                        <div class="nlg-summary-panel nlg-summary-baseline" id="nlg-summary-panel"></div>
+                        <p style="font-size:12px; color:#666; margin-top:12px;">Note: Distilled model captures main entities but still hallucinates (e.g., "cardiac arrest" vs. fainting). Teacher Qwen produces more coherent summaries; gold reference shows ideal output.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Technical <span>Challenges</span></h5>
+                            <ul>
+                                <li>GPU memory on T4 — holding Qwen 1.5B, GPT-2, and CoLA fluency model required deleting CoLA before fine-tuning, plus fp16 and gradient checkpointing.</li>
+                                <li>Tokenizer format mismatch — completion-style TL;DR for GPT-2 student vs. chat template for Qwen teacher.</li>
+                                <li>Long articles truncated at 1,024 tokens, losing tail content relevant to summaries.</li>
+                                <li>GPT-2 lacks native summarization ability — requires prompt engineering and distillation to be useful at all.</li>
+                                <li>ROUGE rewards word overlap, not factual correctness — hallucinations can still score reasonably.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Hyperparameters</h5>
+                            <ul>
+                                <li>Fine-tuning: 3 epochs, lr=2e-5, batch=4, gradient accumulation=4, warmup=100 steps.</li>
+                                <li>Generation: top-p=0.9, temperature=1.0, max 100 new tokens.</li>
+                                <li>Decoding eval: max 100 tokens, 10 generations per prompt on ROCStories test set.</li>
+                                <li>Teacher: Qwen2.5-1.5B-Instruct (28 layers, 1536 hidden). Student: GPT-2 (124M params).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Future <span>Improvements</span></h5>
+                            <ul>
+                                <li>Scale to full CNN/Daily Mail train set (10K+) with a larger teacher (7B+).</li>
+                                <li>Use true soft-label distillation via KL divergence on teacher logits.</li>
+                                <li>Add factuality metrics (NLI-based or entity overlap) beyond ROUGE.</li>
+                                <li>Beam search or constrained decoding for summarization quality.</li>
+                                <li>LoRA/QLoRA for efficient fine-tuning of larger student architectures.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Technologies</h5>
+                            <ul>
+                                <li>PyTorch, HuggingFace Transformers.</li>
+                                <li>GPT-2 (124M), Qwen2.5-1.5B-Instruct (teacher).</li>
+                                <li>ROCStories, CNN/Daily Mail, custom KD dataset.</li>
+                                <li>ROUGE, perplexity, RoBERTa-CoLA fluency classifier.</li>
+                                <li>Google Colab T4 GPU, TensorBoard logging.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container pozo-footer-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="pozo-social-icons">
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://github.com/lwan1" target="_blank" rel="noopener"> <span class="pozo-social-icon fa fa-github"></span> </a>
+                            </li>
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="index.html#"> <span class="pozo-social-icon fa fa-linkedin"></span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pozo-copyright">© 2024 <span>Leon Photography</span> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/scrollIt.min.js"></script>
+    <script src="js/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="js/plugins/jquery.waypoints.min.js"></script>
+    <script src="js/plugins/swiper.min.js"></script>
+    <script src="js/plugins/jquery.fancybox.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/nlg-distillation-demo.js"></script>
+</body>
+</html>

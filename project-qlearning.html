@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>Q-Learning from Scratch — Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/projects-detail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="Lfa-page-loading" class="pozo-pageloading">
+        <div class="pozo-pageloading-inner"> <img src="images/logo.png" class="logo" alt=""> </div>
+    </div>
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <div id="pozo-page-wrapper">
+        <div class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a class="logo" href="index-light.html"> <img src="images/logo-light.png" class="logo-img" alt=""> </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span> </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Services</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Gallery <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="404.html" class="dropdown-item"><span>Image Gallery</span></a></li>
+                                <li><a href="404.html" class="dropdown-item"><span>Video Gallery</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="project-page-header text-center">
+            <div class="container">
+                <div class="animate-box" data-animate-effect="fadeInUp">
+                    <p class="project-breadcrumb"><a href="project.html">Projects</a> / Reinforcement Learning</p>
+                    <h1>Q-Learning from Scratch</h1>
+                    <p class="subtitle">Implemented tabular Q-learning in Python from scratch using OpenAI Gym's Taxi-v3 environment, with a browser-based FrozenLake interactive demo using the same algorithm.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="value">500</span>
+                                <span class="label">State Space (Taxi-v3)</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">10K</span>
+                                <span class="label">Training Episodes</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">ε-greedy</span>
+                                <span class="label">Exploration Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Overview</h5>
+                            <p>Built a complete tabular Q-learning agent without high-level RL libraries. The agent learns to navigate OpenAI Gym's <strong>Taxi-v3</strong> environment — picking up passengers and dropping them off while minimizing timesteps and avoiding illegal actions.</p>
+                            <p>The same core algorithm (Q-table initialization, ε-greedy action selection, and Bellman updates) powers the interactive <strong>FrozenLake</strong> demo below, making the exploration/exploitation tradeoff tangible on a 4×4 grid.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>Understand reinforcement learning fundamentals from first principles.</li>
+                                <li>Build Q-table updates manually using the Bellman equation.</li>
+                                <li>Compare exploration strategies with different epsilon values.</li>
+                                <li>Visualize training dynamics and learned policies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Results</h5>
+                            <ul>
+                                <li>Trained agents on Taxi-v3 over 10,000 episodes with ε = 0.1 and ε = 0.3.</li>
+                                <li>Agents consistently achieve positive median rewards after convergence.</li>
+                                <li>FrozenLake demo reaches high success rates within 5,000–8,000 episodes.</li>
+                                <li>Demonstrated clear policy improvement from random to greedy exploitation.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Key <span>Learnings</span></h5>
+                            <ul>
+                                <li>Exploration vs. exploitation tradeoff — higher ε explores more but learns slower.</li>
+                                <li>Learning rate (α) and discount factor (γ) strongly affect convergence speed.</li>
+                                <li>Reward shaping matters — sparse rewards make early training difficult.</li>
+                                <li>Tabular methods scale poorly but build essential intuition for deep RL.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Q-Learning Equation -->
+        <section class="project-section">
+            <div class="container">
+                <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-head text-center">
+                        <h4>The <span>Algorithm</span></h4>
+                    </div>
+                    <p class="text-center" style="color:#999; margin-bottom:20px;">Each step updates the Q-value for state <em>s</em> and action <em>a</em> using the temporal-difference target:</p>
+                    <div class="ql-equation">
+                        Q(<span class="eq-var">s</span>, <span class="eq-var">a</span>) ← Q(<span class="eq-var">s</span>, <span class="eq-var">a</span>) + α [<span class="eq-var">r</span> + γ max<sub>a'</sub> Q(<span class="eq-var">s'</span>, <span class="eq-var">a'</span>) − Q(<span class="eq-var">s</span>, <span class="eq-var">a</span>)]
+                    </div>
+                    <div class="project-two-col" style="margin-top:30px;">
+                        <div class="project-content-block">
+                            <h5>Exploration vs. Exploitation</h5>
+                            <p>During training, actions are selected via <strong>ε-greedy</strong> policy: with probability ε the agent explores randomly; otherwise it exploits the best-known action (argmax of the Q-row). Lower ε converges faster but risks suboptimal policies.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Environment Details</h5>
+                            <p><strong>Taxi-v3:</strong> 500 discrete states, 6 actions (N/S/E/W + pickup/dropoff). +20 for successful dropoff, −1 per timestep, −10 for illegal pickup/dropoff.</p>
+                            <p><strong>FrozenLake:</strong> 16 states, 4 actions. Reach goal (G) from start (S) without falling in holes (H). Used for the interactive demo below.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agent Comparison -->
+        <section class="project-section">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Before &amp; After <span>Training</span></h4>
+                </div>
+                <div class="agent-comparison animate-box" data-animate-effect="fadeInUp">
+                    <div class="comparison-card">
+                        <h6>Before Training</h6>
+                        <div class="comparison-icon"><i class="fa fa-random"></i></div>
+                        <p>Random action selection wanders the grid, frequently falling into holes or taking unnecessarily long paths. The agent has no memory of which actions lead to reward.</p>
+                        <button class="ql-btn" id="ql-random-btn"><i class="fa fa-play"></i> Run Random Agent</button>
+                    </div>
+                    <div class="comparison-card trained">
+                        <h6>After Training</h6>
+                        <div class="comparison-icon"><i class="fa fa-check-circle"></i></div>
+                        <p>After Q-learning, the agent follows the learned policy — navigating directly toward the goal while avoiding holes. Consistent success across episodes.</p>
+                        <button class="ql-btn ql-btn-primary" id="ql-trained-btn"><i class="fa fa-play"></i> Run Trained Agent</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="project-section" id="ql-demo">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Interactive <span>Demo</span></h4>
+                </div>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:600px; margin:0 auto 30px;">Train a Q-learning agent in your browser. Adjust hyperparameters, watch the reward curves update, and inspect the learned Q-table and policy.</p>
+
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="ql-demo-grid-layout">
+                        <div class="ql-controls">
+                            <div class="ql-control-group">
+                                <label>Learning Rate (α) <span id="ql-alpha-val">0.10</span></label>
+                                <input type="range" id="ql-alpha" min="0.01" max="0.5" step="0.01" value="0.1">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Discount Factor (γ) <span id="ql-gamma-val">0.99</span></label>
+                                <input type="range" id="ql-gamma" min="0.1" max="0.99" step="0.01" value="0.99">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Exploration Rate (ε) <span id="ql-epsilon-val">0.30</span></label>
+                                <input type="range" id="ql-epsilon" min="0.01" max="1" step="0.01" value="0.3">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Episodes <span id="ql-episodes-val">5000</span></label>
+                                <input type="range" id="ql-episodes" min="500" max="10000" step="500" value="5000">
+                            </div>
+                            <div class="ql-demo-actions">
+                                <button class="ql-btn ql-btn-primary" id="ql-train-btn"><i class="fa fa-cogs"></i> Train Agent</button>
+                            </div>
+                            <div class="ql-status ql-status-info" id="ql-status">Loading demo…</div>
+                        </div>
+                        <div class="ql-visual-panel">
+                            <h6>FrozenLake Environment</h6>
+                            <div class="ql-grid" id="ql-grid"></div>
+                            <h6 style="margin-top:20px;">Learned Policy</h6>
+                            <div class="ql-policy-grid" id="ql-policy-grid"></div>
+                        </div>
+                    </div>
+
+                    <div class="results-charts" style="margin-top:30px;">
+                        <div class="chart-card">
+                            <h6>Reward vs. Episodes</h6>
+                            <div class="chart-container">
+                                <canvas id="ql-chart-reward"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h6>Success Rate vs. Episodes</h6>
+                            <div class="chart-container">
+                                <canvas id="ql-chart-success"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ql-demo-stats">
+                        <div class="ql-demo-stat">
+                            <div class="value" id="ql-stat-success">—</div>
+                            <div class="label">Success Rate (last 500)</div>
+                        </div>
+                        <div class="ql-demo-stat">
+                            <div class="value" id="ql-stat-reward">—</div>
+                            <div class="label">Avg Reward (last 500)</div>
+                        </div>
+                        <div class="ql-demo-stat">
+                            <div class="value" id="ql-stat-episodes">—</div>
+                            <div class="label">Episodes Trained</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:30px;">
+                        <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">Q-Table Heatmap</h6>
+                        <div class="ql-qtable" id="ql-qtable"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Technical <span>Challenges</span></h5>
+                            <ul>
+                                <li>Implementing the Bellman update correctly — using max Q(s', a') over the <em>next</em> state, not the current state.</li>
+                                <li>Balancing exploration so the agent discovers the goal without wasting episodes in holes.</li>
+                                <li>Taxi-v3's large state space (500 states × 6 actions) requires thousands of episodes to converge.</li>
+                                <li>Porting the Python algorithm to JavaScript while preserving identical update logic for the browser demo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Future <span>Improvements</span></h5>
+                            <ul>
+                                <li>Add SARSA and expected-SARSA for on-policy comparison.</li>
+                                <li>Implement slippery FrozenLake dynamics for added difficulty.</li>
+                                <li>Deploy Taxi-v3 visualization via a Streamlit or Hugging Face Space backend.</li>
+                                <li>Extend to function approximation with a neural network (DQN) for larger state spaces.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container pozo-footer-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="pozo-social-icons">
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://github.com/lwan1" target="_blank" rel="noopener"> <span class="pozo-social-icon fa fa-github"></span> </a>
+                            </li>
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="index.html#"> <span class="pozo-social-icon fa fa-linkedin"></span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pozo-copyright">© 2024 <span>Leon Photography</span> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/scrollIt.min.js"></script>
+    <script src="js/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="js/plugins/jquery.waypoints.min.js"></script>
+    <script src="js/plugins/swiper.min.js"></script>
+    <script src="js/plugins/jquery.fancybox.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/qlearning-demo.js"></script>
+</body>
+</html>

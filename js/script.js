@@ -1,14 +1,53 @@
 (function ($) {
     "use strict";
     
-    // Preloader 
+    // Preloader — dismiss after critical above-fold images load (max 2.5s)
     $(function () {
         var preloader = $('#Lfa-page-loading');
-        if (preloader.length > 0) {
-            preloader.fadeOut("slow", function () {
+        if (preloader.length === 0) return;
+
+        var dismissed = false;
+        function dismissPreloader() {
+            if (dismissed) return;
+            dismissed = true;
+            preloader.fadeOut(400, function () {
                 preloader.remove();
             });
+            // Prefetch next slider slides after first paint
+            if ($('.swiper-container').length) {
+                ['images/slider/1.jpg', 'images/gallery/21.jpg'].forEach(function (src) {
+                    var img = new Image();
+                    img.src = src;
+                });
+            }
         }
+
+        var critical = document.querySelectorAll(
+            '.swiper-slide:first-child img, .navbar .logo-img, .pozo-pageloading-inner img'
+        );
+        var pending = 0;
+        critical.forEach(function (img) {
+            if (!img.complete) pending++;
+        });
+
+        if (pending === 0) {
+            dismissPreloader();
+            return;
+        }
+
+        var timeout = setTimeout(dismissPreloader, 2500);
+        critical.forEach(function (img) {
+            function onDone() {
+                pending--;
+                if (pending <= 0) {
+                    clearTimeout(timeout);
+                    dismissPreloader();
+                }
+            }
+            if (img.complete) return;
+            img.addEventListener('load', onDone, { once: true });
+            img.addEventListener('error', onDone, { once: true });
+        });
     });
     
     var wind = $(window);

@@ -1,0 +1,13 @@
+/* Homepage performance helpers — no visual design changes */
+
+.pozo-section img[loading="lazy"],
+.pozo-section-slider img {
+    background-color: rgba(128, 128, 128, 0.06);
+}
+
+/* Reduce off-screen rendering cost for below-fold gallery */
+.pozo-section .row.mb-4,
+.pozo-show-more-container {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}
