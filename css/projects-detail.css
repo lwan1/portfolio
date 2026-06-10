@@ -211,6 +211,10 @@
 .ql-control-group label span {
     color: #9c5451;
     font-weight: 500;
+    min-width: 5ch;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
 }
 .ql-control-group input[type="range"] {
     width: 100%;
@@ -683,18 +687,17 @@
 }
 .music-abc-box {
     margin: 0;
-    padding: 18px;
+    padding: 18px 20px;
     border: 1px solid #222;
-    background: #141414;
-    color: #b9c2a8;
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
-    line-height: 1.55;
+    border-left: 3px solid #9c5451;
+    background: #161616;
+    color: #ccc;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 1.8;
     white-space: pre-wrap;
     word-break: break-word;
-    max-height: 240px;
-    overflow-y: auto;
-    border-left: 3px solid #9c5451;
 }
 
 /* ======= Policy Gradient (RL) demo ======= */

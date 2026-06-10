@@ -273,37 +273,6 @@
         });
     }
 
-    function renderNextChart(model) {
-        if (typeof Chart === 'undefined') return;
-        // Context derived from a representative tune body start.
-        var context = generatedText ? generatedText.substring(Math.max(0, generatedText.length - 3)) : 'GFG';
-        var order = parseInt($('music-order').value, 10);
-        var temperature = parseFloat($('music-temp').value);
-        var dist = nextCharDistribution(model, context, order);
-        var probs = applyTemperature(dist, temperature);
-        var entries = Object.keys(probs).map(function (k) {
-            return { ch: k === '\n' ? '\\n' : (k === ' ' ? '␣' : k), p: probs[k] };
-        }).sort(function (a, b) { return b.p - a.p; }).slice(0, 10);
-
-        var ctx = $('music-chart-next');
-        if (!ctx) return;
-        if (charts.next) charts.next.destroy();
-        charts.next = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: entries.map(function (e) { return e.ch; }),
-                datasets: [{
-                    label: 'P(next | "' + context + '")',
-                    data: entries.map(function (e) { return +(e.p * 100).toFixed(1); }),
-                    backgroundColor: 'rgba(201, 168, 124, 0.6)',
-                    borderColor: '#c9a87c',
-                    borderWidth: 1
-                }]
-            },
-            options: chartOpts('%')
-        });
-    }
-
     function chartOpts(suffix) {
         return {
             responsive: true,
@@ -342,7 +311,6 @@
 
         var notes = abcToNotes(snippet);
         renderPianoRoll(notes);
-        renderNextChart(charModel);
 
         $('music-stat-notes').textContent = notes.length;
         $('music-stat-chars').textContent = snippet.length;
@@ -366,14 +334,10 @@
         charModel = buildModel(CORPUS);
         updateLabels();
         renderFreqChart(charModel);
-        renderNextChart(charModel);
 
         ['music-temp', 'music-order', 'music-bpm'].forEach(function (id) {
             var el = $(id);
-            if (el) el.addEventListener('input', function () {
-                updateLabels();
-                if (id !== 'music-bpm') renderNextChart(charModel);
-            });
+            if (el) el.addEventListener('input', updateLabels);
         });
         $('music-gen-btn').addEventListener('click', onGenerate);
         $('music-play-btn').addEventListener('click', onPlay);

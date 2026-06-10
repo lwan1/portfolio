@@ -169,20 +169,12 @@
                 <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
                     <h4>How It <span>Composes</span></h4>
                 </div>
-                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:680px; margin:0 auto 30px;">The model never sees a whole song at once — it predicts one character at a time. The charts below are computed live from the embedded corpus: the character mix the model must learn, and the next-character distribution given the current context.</p>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:680px; margin:0 auto 30px;">The model never sees a whole song at once — it predicts one character at a time. The chart below, computed live from the embedded corpus, shows the character mix it must learn: note letters, bar lines, and meta-characters (titles, keys, meters) all share a single vocabulary, which is exactly what makes next-character prediction non-trivial.</p>
                 <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
-                    <div class="results-charts">
-                        <div class="chart-card">
-                            <h6>Corpus Character Frequency</h6>
-                            <div class="chart-container">
-                                <canvas id="music-chart-freq"></canvas>
-                            </div>
-                        </div>
-                        <div class="chart-card">
-                            <h6>Next-Character Probabilities</h6>
-                            <div class="chart-container">
-                                <canvas id="music-chart-next"></canvas>
-                            </div>
+                    <div class="chart-card">
+                        <h6>Corpus Character Frequency</h6>
+                        <div class="chart-container">
+                            <canvas id="music-chart-freq"></canvas>
                         </div>
                     </div>
                 </div>
