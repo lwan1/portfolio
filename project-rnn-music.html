@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>RNN Music Generation — Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/projects-detail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="Lfa-page-loading" class="pozo-pageloading">
+        <div class="pozo-pageloading-inner"> <img src="images/logo.png" class="logo" alt=""> </div>
+    </div>
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <div id="pozo-page-wrapper">
+        <div class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a class="logo" href="index-light.html"> <img src="images/logo-light.png" class="logo-img" alt=""> </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span> </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Services</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Gallery <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="404.html" class="dropdown-item"><span>Image Gallery</span></a></li>
+                                <li><a href="404.html" class="dropdown-item"><span>Video Gallery</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="project-page-header text-center">
+            <div class="container">
+                <div class="animate-box" data-animate-effect="fadeInUp">
+                    <p class="project-breadcrumb"><a href="project.html">Projects</a> / Sequence Modeling</p>
+                    <h1>RNN Music Generation</h1>
+                    <p class="subtitle">Trained a character-level LSTM in PyTorch to learn the structure of Irish folk music written in ABC notation, then sampled the model autoregressively to compose entirely new playable tunes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="value">1024</span>
+                                <span class="label">LSTM Hidden Units</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">256</span>
+                                <span class="label">Embedding Dim</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">3K</span>
+                                <span class="label">Training Iterations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Overview</h5>
+                            <p>Music in <strong>ABC notation</strong> is just text — a stream of characters encoding key, meter, and the notes themselves. That reframes composition as a <strong>next-character prediction</strong> problem: given the characters seen so far, what character comes next?</p>
+                            <p>I built an <strong>LSTM-based recurrent neural network</strong> from the layers up (embedding → LSTM → linear) and trained it on thousands of Irish folk songs. At inference, the model is seeded with a single character and sampled one token at a time, feeding each prediction back as the next input to generate complete songs.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>Build a character-level language model for raw ABC sheet music.</li>
+                                <li>Define the RNN as an <code>nn.Module</code>: embedding, single-layer LSTM, linear head.</li>
+                                <li>Implement batched sequence sampling and a masked cross-entropy loss.</li>
+                                <li>Generate music autoregressively via multinomial sampling over the vocabulary.</li>
+                                <li>Decode the generated ABC back into an audio waveform you can listen to.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Results</h5>
+                            <ul>
+                                <li>The trained model produces syntactically valid ABC — correct headers, bar lines, and repeat marks emerge on their own.</li>
+                                <li>Cross-entropy falls from the untrained baseline of <code>ln(vocab)</code> toward fluent next-character prediction.</li>
+                                <li>Generated snippets are extracted and synthesized to <code>.wav</code> at 88.2 kHz for playback.</li>
+                                <li>Sampling (not argmax) is essential — greedy decoding collapses into repetitive loops.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Key <span>Learnings</span></h5>
+                            <ul>
+                                <li>An LSTM's hidden + cell state is what carries long-range musical context across time steps.</li>
+                                <li>The full vocabulary matters: meta-characters (titles, keys) increase task complexity.</li>
+                                <li>Temperature trades off novelty against coherence — exactly the fluency/diversity tension.</li>
+                                <li>Teacher forcing during training vs. autoregressive feedback at inference is a subtle but crucial distinction.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section class="project-section">
+            <div class="container">
+                <div class="col-lg-10 offset-lg-1 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-head text-center">
+                        <h4>Model <span>Architecture</span></h4>
+                    </div>
+                    <div class="nlg-pipeline">
+                        <div class="nlg-pipeline-step">Char Index<br><small>0 … vocab&minus;1</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">nn.Embedding<br><small>256-dim vector</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">nn.LSTM<br><small>hidden = 1024</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">nn.Linear<br><small>&rarr; vocab logits</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Softmax + Sample<br><small>next character</small></div>
+                    </div>
+                    <div class="project-two-col" style="margin-top:20px;">
+                        <div class="project-content-block">
+                            <h5>Training</h5>
+                            <p>Random <code>seq_length=100</code> windows are drawn from the corpus; the target is the same window shifted one character right. Loss is <code>CrossEntropyLoss</code> over flattened <code>(B&times;L, vocab)</code> logits, optimized with <strong>Adam</strong> at <code>lr=5e-3</code> for 3,000 iterations, with checkpoints saved every 100 steps and runs tracked in Comet ML.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Generation</h5>
+                            <p>Starting from the seed <code>"X"</code> (every ABC tune begins with <code>X:</code>), the model predicts logits, a <code>softmax</code> turns them into probabilities, and <code>torch.multinomial</code> samples the next character. The hidden state is carried forward each step, giving the model memory of everything generated so far.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanism / Charts -->
+        <section class="project-section">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>How It <span>Composes</span></h4>
+                </div>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:680px; margin:0 auto 30px;">The model never sees a whole song at once — it predicts one character at a time. The charts below are computed live from the embedded corpus: the character mix the model must learn, and the next-character distribution given the current context.</p>
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="results-charts">
+                        <div class="chart-card">
+                            <h6>Corpus Character Frequency</h6>
+                            <div class="chart-container">
+                                <canvas id="music-chart-freq"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h6>Next-Character Probabilities</h6>
+                            <div class="chart-container">
+                                <canvas id="music-chart-next"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="project-section" id="music-demo">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Interactive <span>Demo</span></h4>
+                </div>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:680px; margin:0 auto 30px;">A lightweight character-level model runs entirely in your browser — trained on real Irish ABC tunes embedded on this page. It mirrors the notebook's pipeline: sample the next character at a chosen temperature, build up a tune, then synthesize it with the Web Audio API. Press <strong>Generate</strong>, then <strong>Play</strong>.</p>
+
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="ql-demo-grid-layout">
+                        <div class="ql-controls">
+                            <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:5px;">Sampling Controls</h6>
+                            <div class="ql-control-group">
+                                <label>Temperature <span id="music-temp-val">0.80</span></label>
+                                <input type="range" id="music-temp" min="0.2" max="1.5" step="0.05" value="0.8">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Context Order <span id="music-order-val">3</span></label>
+                                <input type="range" id="music-order" min="1" max="5" step="1" value="3">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Tempo (BPM) <span id="music-bpm-val">240</span></label>
+                                <input type="range" id="music-bpm" min="120" max="360" step="10" value="240">
+                            </div>
+                            <div class="ql-demo-actions">
+                                <button class="ql-btn ql-btn-primary" id="music-gen-btn"><i class="fa fa-magic"></i> Generate</button>
+                                <button class="ql-btn" id="music-play-btn"><i class="fa fa-play"></i> Play</button>
+                                <button class="ql-btn" id="music-stop-btn"><i class="fa fa-stop"></i> Stop</button>
+                            </div>
+                            <p class="nlg-param-hint" id="music-hint">Low temperature stays close to the training tunes; high temperature invents bolder, riskier melodies.</p>
+                            <div class="ql-status ql-status-info" id="music-status">Ready — press Generate.</div>
+                        </div>
+                        <div class="ql-visual-panel">
+                            <h6>Generated Melody</h6>
+                            <div class="music-piano-roll" id="music-roll"></div>
+                            <div class="music-demo-stats">
+                                <div class="ql-demo-stat">
+                                    <div class="value" id="music-stat-notes">—</div>
+                                    <div class="label">Notes</div>
+                                </div>
+                                <div class="ql-demo-stat">
+                                    <div class="value" id="music-stat-chars">—</div>
+                                    <div class="label">Characters</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:30px;">
+                        <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">Generated ABC Notation</h6>
+                        <pre class="music-abc-box" id="music-abc"></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Technical <span>Challenges</span></h5>
+                            <ul>
+                                <li>Correctly aligning input/target windows so the model predicts the <em>next</em> character, not the current one.</li>
+                                <li>Reshaping LSTM outputs to <code>(B&times;L, vocab)</code> so cross-entropy can score every time step at once.</li>
+                                <li>Managing the LSTM hidden + cell state across autoregressive generation steps.</li>
+                                <li>Avoiding repetitive output — sampling from the distribution instead of taking the argmax.</li>
+                                <li>Extracting only well-formed song snippets from a long, sometimes-noisy generated stream.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Hyperparameters</h5>
+                            <ul>
+                                <li>Embedding dim 256, LSTM hidden size 1024, single layer.</li>
+                                <li>Sequence length 100, batch size 8, 3,000 iterations.</li>
+                                <li>Adam optimizer, learning rate 5e-3.</li>
+                                <li>Generation length 1,000 characters, seed string <code>"X"</code>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Future <span>Improvements</span></h5>
+                            <ul>
+                                <li>Stack multiple LSTM layers or swap in a Transformer for longer-range structure.</li>
+                                <li>Add temperature and top-k controls directly into the sampling loop.</li>
+                                <li>Augment the dataset and condition generation on key or meter.</li>
+                                <li>Train longer and compare validation perplexity across configurations.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Technologies</h5>
+                            <ul>
+                                <li>PyTorch (<code>nn.Embedding</code>, <code>nn.LSTM</code>, <code>nn.Linear</code>).</li>
+                                <li>ABC notation + abcmidi / timidity audio synthesis.</li>
+                                <li>Comet ML experiment tracking, Google Colab GPU.</li>
+                                <li>Browser demo: vanilla JS char model + Web Audio API + Chart.js.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container pozo-footer-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="pozo-social-icons">
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://github.com/lwan1" target="_blank" rel="noopener"> <span class="pozo-social-icon fa fa-github"></span> </a>
+                            </li>
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://www.linkedin.com/in/leon-wan"> <span class="pozo-social-icon fa fa-linkedin"></span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pozo-copyright">© 2024 <span>Leon Photography</span> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/scrollIt.min.js"></script>
+    <script src="js/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="js/plugins/jquery.waypoints.min.js"></script>
+    <script src="js/plugins/swiper.min.js"></script>
+    <script src="js/plugins/jquery.fancybox.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/rnn-music-demo.js"></script>
+</body>
+</html>

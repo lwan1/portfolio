@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>Deep RL &amp; Policy Gradients — Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/projects-detail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="Lfa-page-loading" class="pozo-pageloading">
+        <div class="pozo-pageloading-inner"> <img src="images/logo.png" class="logo" alt=""> </div>
+    </div>
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <div id="pozo-page-wrapper">
+        <div class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a class="logo" href="index-light.html"> <img src="images/logo-light.png" class="logo-img" alt=""> </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span> </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Services</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Gallery <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="404.html" class="dropdown-item"><span>Image Gallery</span></a></li>
+                                <li><a href="404.html" class="dropdown-item"><span>Video Gallery</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="project-page-header text-center">
+            <div class="container">
+                <div class="animate-box" data-animate-effect="fadeInUp">
+                    <p class="project-breadcrumb"><a href="project.html">Projects</a> / Reinforcement Learning</p>
+                    <h1>Deep RL &amp; Policy Gradients</h1>
+                    <p class="subtitle">Implemented the REINFORCE policy-gradient algorithm in two settings: a discrete-action neural agent that balances CartPole, and a continuous-control CNN that learns to drive end-to-end from raw pixels in the VISTA simulator.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="value">2</span>
+                                <span class="label">Environments</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">REINFORCE</span>
+                                <span class="label">Learning Algorithm</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">γ=0.95</span>
+                                <span class="label">Reward Discount</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Overview</h5>
+                            <p>Unlike supervised learning, a reinforcement-learning agent gets no labels — only a stream of rewards. This project builds the <strong>policy gradient</strong> method from scratch, where a neural network <em>is</em> the policy: it maps observations directly to action probabilities and is nudged to make high-reward actions more likely.</p>
+                            <p><strong>Part 1 — CartPole:</strong> a feed-forward network balances a pole with two discrete actions. <strong>Part 2 — VISTA:</strong> a convolutional network outputs a <em>continuous</em> steering distribution, learning lane-following entirely inside a photorealistic, data-driven driving simulator.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>Define agents as neural networks that output action distributions.</li>
+                                <li>Implement a reusable <code>Memory</code> buffer of observations, actions, and rewards.</li>
+                                <li>Compute normalized, discounted returns for credit assignment.</li>
+                                <li>Derive the policy-gradient loss (reward-weighted negative log-likelihood).</li>
+                                <li>Extend from discrete (softmax) to continuous (Gaussian) action spaces.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Results</h5>
+                            <ul>
+                                <li>The CartPole agent learns from a near-random policy to consistently balancing the pole for full-length episodes.</li>
+                                <li>Reward climbs steadily over training episodes as the policy sharpens.</li>
+                                <li>The VISTA driving agent learns to stay in-lane far longer than a random controller, judged by distance traveled before crashing.</li>
+                                <li>The identical <code>train_step</code> + discounting code drives both agents — only the loss and model differ.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Key <span>Learnings</span></h5>
+                            <ul>
+                                <li>Gradients are minimized on <em>negative</em> log-likelihood scaled by return — increasing the odds of good actions.</li>
+                                <li>RL gradients are extremely noisy; global-norm gradient clipping is what keeps training stable.</li>
+                                <li>Discrete actions use softmax cross-entropy; continuous actions use a Normal log-prob.</li>
+                                <li>Reward shaping and normalization dramatically affect convergence speed.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm -->
+        <section class="project-section">
+            <div class="container">
+                <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-head text-center">
+                        <h4>The <span>Algorithm</span></h4>
+                    </div>
+                    <p class="text-center" style="color:#999; margin-bottom:20px;">Policy gradients maximize expected return by scaling each action's log-probability by the return that followed it:</p>
+                    <div class="ql-equation">
+                        L(<span class="eq-var">θ</span>) = &minus; &Sigma;<sub>t</sub> log <span class="eq-var">π<sub>θ</sub></span>(<span class="eq-var">a<sub>t</sub></span> | <span class="eq-var">s<sub>t</sub></span>) &middot; <span class="eq-var">R<sub>t</sub></span>
+                    </div>
+                    <p class="text-center" style="color:#666; font-size:13px; margin-bottom:25px;">where the return <span class="eq-var">R<sub>t</sub></span> = &Sigma;<sub>k</sub> γ<sup>k</sup> r<sub>t+k</sub> is the discounted, then normalized, future reward.</p>
+                    <div class="project-two-col">
+                        <div class="project-content-block">
+                            <h5>Discrete — CartPole</h5>
+                            <p>Observation: 4 floats (cart position, cart velocity, pole angle, pole angular velocity). The policy is <code>Dense(32, relu) &rarr; Dense(2)</code>; logits become a categorical distribution sampled with <code>tf.random.categorical</code>. Loss is <code>sparse_softmax_cross_entropy</code> weighted by return.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Continuous — VISTA Driving</h5>
+                            <p>Observation: a cropped RGB camera image. A 4-layer CNN (swish) outputs a mean μ and σ defining a <code>Normal</code> distribution over <em>curvature</em>. Conversions bound it: μ = ⅛·tanh(·), σ = 0.1·sigmoid(·)+0.005. Loss is the Gaussian negative log-prob scaled by return.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISTA architecture -->
+        <section class="project-section">
+            <div class="container">
+                <div class="col-lg-10 offset-lg-1 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-head text-center">
+                        <h4>Self-Driving <span>CNN Controller</span></h4>
+                    </div>
+                    <div class="nlg-pipeline">
+                        <div class="nlg-pipeline-step">RGB Crop<br><small>ROI, [0,1]</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Conv 32&middot;5&times;5<br><small>stride 2</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Conv 48&middot;5&times;5</div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Conv 64&middot;3&times;3 &times;2</div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Dense 128<br><small>swish</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">μ, σ<br><small>Normal(curvature)</small></div>
+                    </div>
+                    <p class="text-center" style="color:#999; margin-top:20px; max-width:720px; margin-left:auto; margin-right:auto;">An episode runs until the car leaves its lane or exceeds the maximum rotation (a "crash"); the full trajectory's (state, action, reward) triplets are then fed to the same policy-gradient update used for CartPole, with mini-batching for the large image observations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="project-section" id="rl-demo">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Interactive <span>Demo</span></h4>
+                </div>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:700px; margin:0 auto 30px;">A real CartPole physics simulation and a 2-layer policy network — both running in your browser. Training uses the same REINFORCE update from the notebook: roll out an episode, compute discounted normalized returns, and take a reward-weighted gradient step. Train it, then watch the learned policy balance the pole.</p>
+
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="ql-demo-grid-layout">
+                        <div class="ql-controls">
+                            <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:5px;">Hyperparameters</h6>
+                            <div class="ql-control-group">
+                                <label>Learning Rate (Adam) <span id="rl-lr-val">0.010</span></label>
+                                <input type="range" id="rl-lr" min="0.002" max="0.03" step="0.001" value="0.01">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Discount Factor (γ) <span id="rl-gamma-val">0.95</span></label>
+                                <input type="range" id="rl-gamma" min="0.8" max="0.99" step="0.01" value="0.95">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Hidden Units <span id="rl-hidden-val">32</span></label>
+                                <input type="range" id="rl-hidden" min="8" max="64" step="8" value="32">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Training Episodes <span id="rl-episodes-val">300</span></label>
+                                <input type="range" id="rl-episodes" min="50" max="600" step="50" value="300">
+                            </div>
+                            <div class="ql-demo-actions">
+                                <button class="ql-btn ql-btn-primary" id="rl-train-btn"><i class="fa fa-cogs"></i> Train Agent</button>
+                                <button class="ql-btn" id="rl-run-btn"><i class="fa fa-play"></i> Run Policy</button>
+                            </div>
+                            <div class="ql-status ql-status-info" id="rl-status">Ready — train the agent.</div>
+                            <div class="ql-demo-stats" style="border-top:none; padding-top:10px; margin-top:10px;">
+                                <div class="ql-demo-stat">
+                                    <div class="value" id="rl-stat-reward">—</div>
+                                    <div class="label">Avg Reward (last 20)</div>
+                                </div>
+                                <div class="ql-demo-stat">
+                                    <div class="value" id="rl-stat-best">—</div>
+                                    <div class="label">Best Episode</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ql-visual-panel">
+                            <h6>CartPole Environment</h6>
+                            <canvas id="rl-canvas" class="rl-canvas" width="440" height="240"></canvas>
+                            <p style="font-size:12px; color:#666; margin-top:10px;">Reward = +1 per step the pole stays upright (max 200). The episode ends if the pole tips past 12° or the cart drifts off-screen.</p>
+                        </div>
+                    </div>
+
+                    <div class="results-charts" style="margin-top:30px;">
+                        <div class="chart-card">
+                            <h6>Episode Reward vs. Training</h6>
+                            <div class="chart-container">
+                                <canvas id="rl-chart-reward"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h6>Continuous Action Distribution</h6>
+                            <div class="chart-container">
+                                <canvas id="rl-chart-gauss"></canvas>
+                            </div>
+                            <div style="margin-top:12px;">
+                                <div class="ql-control-group">
+                                    <label>Steering mean μ <span id="rl-mu-val">0.00</span></label>
+                                    <input type="range" id="rl-mu" min="-1" max="1" step="0.05" value="0">
+                                </div>
+                                <div class="ql-control-group">
+                                    <label>Spread σ <span id="rl-sigma-val">0.50</span></label>
+                                    <input type="range" id="rl-sigma" min="0.05" max="1" step="0.05" value="0.5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Technical <span>Challenges</span></h5>
+                            <ul>
+                                <li>High-variance gradients — addressed with reward normalization and global-norm clipping (clip value 2).</li>
+                                <li>Sparse, delayed feedback: the agent only learns once an episode ends.</li>
+                                <li>Moving from a categorical (discrete) to a Normal (continuous) policy changes the entire loss formulation.</li>
+                                <li>Learning a driving policy directly from high-dimensional raw pixels, not engineered features.</li>
+                                <li>Memory/compute pressure from image observations forced mini-batch sampling per update.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Hyperparameters</h5>
+                            <ul>
+                                <li>CartPole: Adam, lr 1e-3, γ 0.95, up to 500 episodes.</li>
+                                <li>VISTA: Adam, lr 5e-4, max batch 300, max curvature ⅛, max σ 0.1.</li>
+                                <li>Gradient clipping by global norm = 2.</li>
+                                <li>Camera observation 200×320, cropped to a region of interest.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Future <span>Improvements</span></h5>
+                            <ul>
+                                <li>Upgrade REINFORCE to PPO, TRPO, or A3C for sample efficiency and stability.</li>
+                                <li>Add a learned baseline / value head to reduce gradient variance (actor-critic).</li>
+                                <li>Reward shaping in VISTA — penalize distance from lane center, not just crashes.</li>
+                                <li>Recurrent or attention-based controllers, plus image augmentation.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Technologies</h5>
+                            <ul>
+                                <li>TensorFlow 2 / Keras, TensorFlow Probability.</li>
+                                <li>OpenAI Gym (CartPole-v1), VISTA data-driven simulator.</li>
+                                <li>Convolutional policy network, Gaussian action head.</li>
+                                <li>Browser demo: vanilla-JS physics + 2-layer policy net (manual backprop) + Chart.js.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container pozo-footer-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="pozo-social-icons">
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://github.com/lwan1" target="_blank" rel="noopener"> <span class="pozo-social-icon fa fa-github"></span> </a>
+                            </li>
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://www.linkedin.com/in/leon-wan"> <span class="pozo-social-icon fa fa-linkedin"></span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pozo-copyright">© 2024 <span>Leon Photography</span> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/scrollIt.min.js"></script>
+    <script src="js/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="js/plugins/jquery.waypoints.min.js"></script>
+    <script src="js/plugins/swiper.min.js"></script>
+    <script src="js/plugins/jquery.fancybox.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/policy-gradient-demo.js"></script>
+</body>
+</html>

@@ -652,6 +652,155 @@
     gap: 40px;
 }
 
+/* ======= RNN Music Generation demo ======= */
+.music-piano-roll {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #222;
+    background: rgba(255, 255, 255, 0.02);
+    overflow-x: auto;
+}
+.music-note {
+    flex: 0 0 8px;
+    min-width: 8px;
+    background: rgba(156, 84, 81, 0.55);
+    border-radius: 2px 2px 0 0;
+    transition: background 0.1s, transform 0.1s;
+}
+.music-note.active {
+    background: #c9a87c;
+    transform: scaleY(1.04);
+    box-shadow: 0 0 10px rgba(201, 168, 124, 0.7);
+}
+.music-demo-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 18px;
+}
+.music-abc-box {
+    margin: 0;
+    padding: 18px;
+    border: 1px solid #222;
+    background: #141414;
+    color: #b9c2a8;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 240px;
+    overflow-y: auto;
+    border-left: 3px solid #9c5451;
+}
+
+/* ======= Policy Gradient (RL) demo ======= */
+.rl-canvas {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #222;
+    background: #141414;
+    border-radius: 4px;
+}
+
+/* ======= LLM Fine-tuning demo ======= */
+.llm-text-input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    font-size: 13px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+}
+.llm-text-input:focus {
+    outline: none;
+    border-color: #9c5451;
+}
+.llm-token-stream {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 14px;
+    border: 1px solid #222;
+    background: rgba(255, 255, 255, 0.02);
+    min-height: 120px;
+    align-content: flex-start;
+}
+.llm-tok {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    padding: 3px 7px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    color: #ccc;
+}
+.llm-tok-special { background: rgba(102, 102, 102, 0.18); color: #888; border-color: #333; }
+.llm-tok-q { background: rgba(201, 168, 124, 0.16); color: #c9a87c; }
+.llm-tok-a { background: rgba(107, 158, 107, 0.18); color: #8fc28f; }
+.llm-tok-legend {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.llm-tok-legend.llm-tok-special { background: #555; }
+.llm-tok-legend.llm-tok-q { background: #c9a87c; }
+.llm-tok-legend.llm-tok-a { background: #6b9e6b; }
+.llm-token-count {
+    margin-top: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #9c5451;
+}
+.llm-prompt-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.llm-judge-result {
+    margin-top: 20px;
+}
+.llm-judge-scorebar {
+    height: 14px;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.llm-judge-scorefill {
+    height: 100%;
+    width: 0%;
+    background: #9c5451;
+    border-radius: 8px;
+    transition: width 0.4s, background 0.4s;
+}
+.llm-judge-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+.llm-judge-meta #llm-judge-score {
+    font-family: 'Oswald', sans-serif;
+    color: #9c5451;
+    font-size: 16px;
+}
+.llm-judge-meta #llm-judge-note {
+    color: #888;
+}
+
 @media (max-width: 991px) {
     .ql-demo-grid-layout,
     .results-charts,
@@ -662,6 +811,9 @@
     }
     .project-page-header h1 {
         font-size: 30px;
+    }
+    .music-demo-stats {
+        grid-template-columns: 1fr 1fr;
     }
 }
 

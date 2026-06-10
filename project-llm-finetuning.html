@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>LLM Fine-Tuning &amp; LLM-as-Judge — Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/projects-detail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="Lfa-page-loading" class="pozo-pageloading">
+        <div class="pozo-pageloading-inner"> <img src="images/logo.png" class="logo" alt=""> </div>
+    </div>
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <div id="pozo-page-wrapper">
+        <div class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a class="logo" href="index-light.html"> <img src="images/logo-light.png" class="logo-img" alt=""> </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span> </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Services</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Gallery <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="404.html" class="dropdown-item"><span>Image Gallery</span></a></li>
+                                <li><a href="404.html" class="dropdown-item"><span>Video Gallery</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="project.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="404.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="project-page-header text-center">
+            <div class="container">
+                <div class="animate-box" data-animate-effect="fadeInUp">
+                    <p class="project-breadcrumb"><a href="project.html">Projects</a> / Large Language Models</p>
+                    <h1>LLM Fine-Tuning &amp; LLM-as-Judge</h1>
+                    <p class="subtitle">Fine-tuned a 1.2B-parameter LLM (Liquid AI LFM2) to speak in a target style using LoRA, then built an LLM-as-a-judge evaluation pipeline with Gemini 2.5 and Comet Opik to score and improve the model quantitatively.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 animate-box" data-animate-effect="fadeInUp">
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="value">1.2B</span>
+                                <span class="label">Base Model (LFM2)</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">r=8</span>
+                                <span class="label">LoRA Rank</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="value">&lt;1%</span>
+                                <span class="label">Params Trained</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Overview</h5>
+                            <p>This project walks the full LLM lifecycle: <strong>tokenization</strong> and chat <strong>templating</strong>, autoregressive generation, <strong>parameter-efficient fine-tuning</strong> with LoRA, and — crucially — <strong>evaluation</strong>. The base model is Liquid AI's <strong>LFM2-1.2B</strong>.</p>
+                            <p>The model is fine-tuned to answer in a distinct style (first a leprechaun, then Yoda). Because "good style" is subjective, I used the <strong>LLM-as-a-judge</strong> pattern: a larger model (Gemini 2.5 Flash) scores generations against the target style, turning a qualitative goal into a quantitative metric.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>Understand BPE tokenization and ChatML-style prompt templating.</li>
+                                <li>Run next-token prediction and full generation with <code>model.generate()</code>.</li>
+                                <li>Apply LoRA adapters to fine-tune ~1B parameters efficiently.</li>
+                                <li>Mask the loss so only <em>answer</em> tokens are trained on.</li>
+                                <li>Build a judge-based metric and use it to iterate on the model.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Results</h5>
+                            <ul>
+                                <li>LoRA trains under 1% of parameters yet visibly shifts the model's voice into the target style.</li>
+                                <li>Judge scores cleanly separate the three controls: base (low) &lt; generated (mid–high) &lt; true style (high).</li>
+                                <li>Style fine-tuning lowers the cross-entropy (negative log-likelihood) of held-out target-style text.</li>
+                                <li>Opik tracing logs every live inference call with its style score for monitoring.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Key <span>Learnings</span></h5>
+                            <ul>
+                                <li>Templates and special tokens are what let a base LM behave like a chatbot.</li>
+                                <li>Masking question tokens (training only on answers) is essential for instruction-style tuning.</li>
+                                <li>A judge LLM is only as good as its system prompt — the prompt defines the rubric.</li>
+                                <li>Benchmarks can mislead; synthetic, judge-based evaluation offers a flexible alternative.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pipeline -->
+        <section class="project-section">
+            <div class="container">
+                <div class="col-lg-10 offset-lg-1 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-head text-center">
+                        <h4>Fine-Tune &amp; <span>Evaluate Loop</span></h4>
+                    </div>
+                    <div class="nlg-pipeline">
+                        <div class="nlg-pipeline-step">Q/A Dataset<br><small>styled answers</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Template + Tokenize<br><small>ChatML, BPE</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">LoRA Fine-Tune<br><small>Lion, masked loss</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">Generate<br><small>held-out questions</small></div>
+                        <span class="nlg-pipeline-arrow">&rarr;</span>
+                        <div class="nlg-pipeline-step">LLM Judge<br><small>Gemini 2.5 · Opik</small></div>
+                    </div>
+                    <div class="project-two-col" style="margin-top:20px;">
+                        <div class="project-content-block">
+                            <h5>LoRA — Low-Rank Adaptation</h5>
+                            <p>Instead of updating a weight matrix <code>W</code> directly, LoRA freezes it and learns a small low-rank update <code>BA</code> (rank <code>r=8</code>) applied to the attention and MLP projections (<code>q/k/v/o_proj</code>, <code>gate/up/down_proj</code>). Only those adapters train — a tiny fraction of the model — optimized with the <strong>Lion</strong> optimizer at <code>lr=1e-4</code> for 200 steps.</p>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Masked Causal Loss</h5>
+                            <p>Each example is wrapped in the template <code>user … &lt;|im_end|&gt; assistant …</code>. An offset mask flags which tokens belong to the answer, and cross-entropy is computed <em>only</em> on those answer tokens — so the model learns to produce styled responses, not to memorize the questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results / Charts -->
+        <section class="project-section">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Evaluation &amp; <span>Metrics</span></h4>
+                </div>
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <div class="results-charts">
+                        <div class="chart-card">
+                            <h6>Trainable Parameters: Full vs. LoRA</h6>
+                            <div class="chart-container">
+                                <canvas id="llm-chart-params"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h6>Judge Style Score by Source</h6>
+                            <div class="chart-container">
+                                <canvas id="llm-chart-scores"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size:12px; color:#666; margin-top:18px;">The judge-score chart is generated live by the in-page heuristic style scorer (a stand-in for the Gemini judge) applied to base-style, generated-style, and true-style sample sentences — reproducing the notebook's negative-control / model / positive-control comparison.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="project-section" id="llm-demo">
+            <div class="container">
+                <div class="section-head text-center animate-box" data-animate-effect="fadeInUp">
+                    <h4>Interactive <span>Demo</span></h4>
+                </div>
+                <p class="text-center animate-box" data-animate-effect="fadeInUp" style="color:#999; max-width:700px; margin:0 auto 30px;">Explore the three core ideas hands-on: build a ChatML prompt and see it tokenized, compare how the base vs. style-tuned model answers, and run any sentence through an LLM-as-a-judge style scorer.</p>
+
+                <div class="ql-demo animate-box" data-animate-effect="fadeInUp">
+                    <!-- Templating + tokenization -->
+                    <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">1 · Chat Template &amp; Tokenization</h6>
+                    <div class="ql-demo-grid-layout">
+                        <div class="ql-controls">
+                            <div class="ql-control-group">
+                                <label>User Question</label>
+                                <input type="text" id="llm-question" class="llm-text-input" value="What is the capital of Ireland?">
+                            </div>
+                            <div class="ql-control-group">
+                                <label>Assistant Answer</label>
+                                <input type="text" id="llm-answer" class="llm-text-input" value="Ah, Dublin it is, to be sure!">
+                            </div>
+                            <p class="nlg-param-hint">The template adds special tokens (<code>&lt;|im_start|&gt;</code>, <code>&lt;|im_end|&gt;</code>) so the model knows whose turn it is. During training only the answer tokens count toward the loss.</p>
+                            <div class="llm-token-count" id="llm-token-count">~0 tokens</div>
+                        </div>
+                        <div class="ql-visual-panel">
+                            <h6>Templated &amp; Tokenized</h6>
+                            <div class="llm-token-stream" id="llm-token-stream"></div>
+                            <p style="font-size:11px; color:#666; margin-top:12px;"><span class="llm-tok-legend llm-tok-special"></span> special &nbsp; <span class="llm-tok-legend llm-tok-q"></span> question &nbsp; <span class="llm-tok-legend llm-tok-a"></span> answer (loss)</p>
+                        </div>
+                    </div>
+
+                    <!-- Style comparison -->
+                    <div style="margin-top:35px; padding-top:35px; border-top:1px solid #222;">
+                        <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">2 · Base vs. Style-Tuned Responses</h6>
+                        <div class="ql-control-group" style="max-width:340px; margin-bottom:18px;">
+                            <label>Target Style</label>
+                            <select id="llm-style" class="form-select" style="background:#1a1a1a; border-color:#333; color:#ccc; font-size:13px;">
+                                <option value="yoda">Yoda</option>
+                                <option value="leprechaun">Leprechaun</option>
+                            </select>
+                        </div>
+                        <div class="llm-prompt-tabs" id="llm-prompt-tabs"></div>
+                        <div class="results-charts" style="grid-template-columns:1fr 1fr; margin-top:18px;">
+                            <div class="nlg-summary-panel nlg-summary-baseline">
+                                <h6>Base LFM2 (before tuning)</h6>
+                                <p id="llm-resp-base"></p>
+                            </div>
+                            <div class="nlg-summary-panel nlg-summary-distilled">
+                                <h6 id="llm-resp-style-title">Style-Tuned</h6>
+                                <p id="llm-resp-style"></p>
+                            </div>
+                        </div>
+                        <p style="font-size:12px; color:#666; margin-top:12px;">Illustrative responses representative of each target style. The judge scores below are computed live on these outputs.</p>
+                    </div>
+
+                    <!-- Judge -->
+                    <div style="margin-top:35px; padding-top:35px; border-top:1px solid #222;">
+                        <h6 style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:15px;">3 · LLM-as-a-Judge — Style Scorer</h6>
+                        <div class="ql-control-group">
+                            <label>Text to evaluate (judged for Yoda-speak)</label>
+                            <input type="text" id="llm-judge-input" class="llm-text-input" value="Fun sport, tennis is. But work hard, you must.">
+                        </div>
+                        <button class="ql-btn ql-btn-primary" id="llm-judge-btn" style="margin-top:12px;"><i class="fa fa-gavel"></i> Score Text</button>
+                        <div class="llm-judge-result" id="llm-judge-result">
+                            <div class="llm-judge-scorebar"><div class="llm-judge-scorefill" id="llm-judge-fill"></div></div>
+                            <div class="llm-judge-meta"><span id="llm-judge-score">—</span><span id="llm-judge-note"></span></div>
+                        </div>
+                        <p style="font-size:12px; color:#666; margin-top:14px;">This heuristic scorer detects Yoda-style object–subject–verb inversions and signature phrasing, normalizing to a 0–1 score — the same shape the notebook's Gemini judge returns (a 0–10 score divided by 10).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="project-section">
+            <div class="container">
+                <div class="row project-two-col">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <div class="project-content-block">
+                            <h5>Technical <span>Challenges</span></h5>
+                            <ul>
+                                <li>Computing the answer-token mask from tokenizer offset mappings to exclude the prompt from the loss.</li>
+                                <li>Fitting a 1.2B model into limited memory — solved by LoRA's tiny trainable footprint.</li>
+                                <li>Designing a judge system prompt strict enough to discriminate true style from mimicry.</li>
+                                <li>Parsing the judge's JSON score reliably (retry logic over up to 20 attempts).</li>
+                                <li>Evaluating subjective style without ground-truth labels.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Configuration</h5>
+                            <ul>
+                                <li>Base: LiquidAI LFM2-1.2B; tokenizer uses byte-pair encoding (BPE).</li>
+                                <li>LoRA: rank 8, targets q/k/v/o &amp; gate/up/down projections, CAUSAL_LM.</li>
+                                <li>Optimizer Lion, lr 1e-4, 200 steps, context length 512.</li>
+                                <li>Judge: Gemini 2.5 Flash via OpenRouter; evaluation + tracing via Comet Opik.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+                        <div class="project-content-block">
+                            <h5>Future <span>Improvements</span></h5>
+                            <ul>
+                                <li>Tune LoRA rank, learning rate, and step count against the judge metric.</li>
+                                <li>Use multiple judges or self-consistency to reduce judge bias.</li>
+                                <li>Add reference-based metrics alongside the judge for triangulation.</li>
+                                <li>Explore DPO / preference optimization for finer stylistic control.</li>
+                            </ul>
+                        </div>
+                        <div class="project-content-block">
+                            <h5>Technologies</h5>
+                            <ul>
+                                <li>PyTorch, HuggingFace Transformers &amp; Datasets, PEFT (LoRA).</li>
+                                <li>Lion optimizer, cross-entropy with token masking.</li>
+                                <li>OpenRouter (Gemini 2.5 Flash), Comet Opik evals &amp; tracing.</li>
+                                <li>Browser demo: vanilla-JS tokenizer viz, style scorer, Chart.js.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container pozo-footer-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="pozo-social-icons">
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://github.com/lwan1" target="_blank" rel="noopener"> <span class="pozo-social-icon fa fa-github"></span> </a>
+                            </li>
+                            <li class="pozo-social-icons-item">
+                                <a class="pozo-social-link" href="https://www.linkedin.com/in/leon-wan"> <span class="pozo-social-icon fa fa-linkedin"></span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pozo-copyright">© 2024 <span>Leon Photography</span> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/scrollIt.min.js"></script>
+    <script src="js/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="js/plugins/jquery.waypoints.min.js"></script>
+    <script src="js/plugins/swiper.min.js"></script>
+    <script src="js/plugins/jquery.fancybox.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/llm-finetuning-demo.js"></script>
+</body>
+</html>
