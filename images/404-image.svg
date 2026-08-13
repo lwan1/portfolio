@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-label="404">
+  <rect width="360" height="280" fill="none"/>
+  <!-- Empty gallery frame -->
+  <rect x="78" y="22" width="204" height="168" fill="#111" stroke="#9c5451" stroke-width="8"/>
+  <rect x="94" y="38" width="172" height="136" fill="#191919" stroke="#2a2a2a" stroke-width="2"/>
+  <!-- Missing exposure -->
+  <line x1="104" y1="48" x2="256" y2="164" stroke="#2e2e2e" stroke-width="2"/>
+  <line x1="256" y1="48" x2="104" y2="164" stroke="#2e2e2e" stroke-width="2"/>
+  <text x="180" y="128" text-anchor="middle" fill="#9c5451" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" letter-spacing="8">404</text>
+  <!-- Pedestal / caption bar -->
+  <rect x="78" y="190" width="204" height="36" fill="#9c5451"/>
+  <text x="180" y="213" text-anchor="middle" fill="#f4ece8" font-family="Georgia, 'Times New Roman', serif" font-size="12" letter-spacing="3">PAGE NOT FOUND</text>
+</svg>

@@ -2189,6 +2189,12 @@ ul.team-info-social li {
 .error-page {
     position: relative;
 }
+.error-page-image {
+    display: inline-block;
+    width: min(280px, 70%);
+    height: auto;
+    max-width: 280px;
+}
 .error-page h3 {
     font-size: 35px;
     text-transform: uppercase;
